@@ -1,2 +1,5 @@
+/mytodo/settings.py
+/mytodo/__pycache__/
+/todo/migrations/
+/todo/__pycache__/
 db.sqlite3
-__pycache__

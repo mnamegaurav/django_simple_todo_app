@@ -11,4 +11,3 @@ class ToDoForm(ModelForm):
 			'placeholder':'Enter todo',
 			'aria-label':'Todo',
 			'aria-describedby':'add-btn',}),}
-		#'complete': Boolean}
