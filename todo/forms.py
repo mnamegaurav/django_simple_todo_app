@@ -1,13 +1,22 @@
-from django.forms import ModelForm,  TextInput
+from django import forms
 from .models import ToDo
 
-class ToDoForm(ModelForm):
-	class Meta:
-		model = ToDo
+class ToDoForm(forms.Form):
+    text = forms.CharField(widget=forms.TextInput(
+                                                attrs={
+                                                    'class':'form-control',
+                                                    'placeholder':'Enter todo',
+                                                    })
+                                                )
 
-		fields = ('text','complete',)
 
-		widgets = {'text': TextInput(attrs={'class':'form-control',
-			'placeholder':'Enter todo',
-			'aria-label':'Todo',
-			'aria-describedby':'add-btn',}),}
+
+	# class Meta:
+	# 	model = ToDo
+
+	# 	fields = ('text','complete',)
+
+	# 	widgets = {'text': TextInput(attrs={'class':'form-control',
+	# 		'placeholder':'Enter todo',
+	# 		'aria-label':'Todo',
+	# 		'aria-describedby':'add-btn',}),}
