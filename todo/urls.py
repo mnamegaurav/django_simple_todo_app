@@ -1,9 +1,7 @@
-from django.urls import path
-from todo.views import home, add_todo, edit_todo, delete_todo
+from django.urls import path, include
+from django.contrib import admin
 
 urlpatterns = [
-    path('', home, name='home'),
-    path('add/', add_todo, name='add_todo'),
-    path('<int:todo_id>/edit/', edit_todo, name="edit_todo"),
-    path('<int:todo_id>/delete/', delete_todo, name="delete_todo"),
+    path('admin/', admin.site.urls),
+    path('', include('mytodo.urls')),
 ]
